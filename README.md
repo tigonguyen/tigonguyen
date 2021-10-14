@@ -1,3 +1,7 @@
+<a href="#">
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=tigonguyen&show_icons=true&theme=default">
+</a>
+
 ### Hi there 👋
 My name is Thanh Nguyen, almost people know me as a DevOps Engineer.
 
