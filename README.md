@@ -1,7 +1,3 @@
-<a href="#">
-<img align="right" src="https://github-readme-stats.vercel.app/api?username=tigonguyen&show_icons=true&theme=default">
-</a>
-
 ### Hi there 👋
 My name is Thanh Nguyen, almost people know me as a DevOps Engineer.
 
@@ -17,3 +13,8 @@ Here are some ideas to get you started:
 - 📫 How to reach me:
    - [Linkedin](https://www.linkedin.com/in/thanh-nguyen-656853156/)
    - [Email](mailto:thanhch09091998@gmail.com)
+
+
+<a href="#">
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=tigonguyen&show_icons=true&theme=default">
+</a>
