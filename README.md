@@ -8,11 +8,10 @@ Here are some ideas to get you started:
 
 -->
 - 🔭 I’m currently working on DevOps role in a Software Company.
-- 🌱 I’m currently learning DevOps advanced and interested with Quantum Computer.
-- ⚡ Hobies: science, writting, football, music travel and many things else
+- 🌱 I’m a curious system guy and interested in various fileds of IT industry.
+- ⚡ Hobies: science, football, music, travel and many things else
 - 📫 How to reach me:
    - [Linkedin](https://www.linkedin.com/in/thanh-nguyen-656853156/)
-   - [Email](mailto:thanhch09091998@gmail.com)
 
 
 <a href="#">
