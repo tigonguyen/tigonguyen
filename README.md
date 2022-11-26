@@ -1,5 +1,5 @@
 ### Hi there 👋
-My name is Thanh Nguyen, almost people know me as a DevOps Engineer.
+My name is tigonguyen, almost people know me as a Information System guy!
 
 <!--
 **tigonguyen/tigonguyen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
