@@ -12,7 +12,8 @@ Here are some ideas to get you started:
 - ⚡ Hobies: science, football, music, travel and many things else
 - 📫 How to reach me:
    - [Linkedin](https://www.linkedin.com/in/thanh-nguyen-656853156/)
-   - [Blog](https://blog.scienista.com/)
+   - [Blog](https://devopsista.com/blog/)
+   - [Porfolio Profile](https://devopsista.com/about/)
 
 
 <a href="#">
