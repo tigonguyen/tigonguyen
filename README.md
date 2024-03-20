@@ -7,8 +7,8 @@ My name is tigonguyen, almost people know me as a Information System guy!
 Here are some ideas to get you started:
 
 -->
-- 🔭 I’m currently working on DevOps role in a Software Company.
-- 🌱 I’m a curious system guy and interested in various fileds of IT industry.
+- 🔭 I currently work as DevOps Engineer for a Banking Service Company.
+- 🌱 I’m curious and interested about system and various fileds of IT industry.
 - ⚡ Hobies: science, football, music, travel and many things else
 - 📫 How to reach me:
    - [Linkedin](https://www.linkedin.com/in/thanh-nguyen-656853156/)
