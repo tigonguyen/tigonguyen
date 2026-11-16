@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Swiss-style palette: ink, paper and one signal colour. Swapped as a whole in dark mode. */
+:root {
+  --bg: #ffffff;
+  --fg: #0d0d0d;
+  --muted: #6b6b6b;
+  --accent: #ff4a1c;
+  --on-accent: #0d0d0d;
+}
+.dark {
+  --bg: #1b1b1b;
+  --fg: #f1f0ec;
+  --muted: #a3a3a3;
+  --accent: #ff6a3d;
+  --on-accent: #0d0d0d;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-on-accent: var(--on-accent);
+}
+
+@theme {
+  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    @apply bg-bg text-fg antialiased;
+    font-family: var(--font-sans);
+    font-feature-settings: "tnum";
+  }
+  ::selection {
+    @apply bg-accent text-on-accent;
+  }
+}
+
+/* Small uppercase label used in the header, section rows and footer. */
+@utility label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}

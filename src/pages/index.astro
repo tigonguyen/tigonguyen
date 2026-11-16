@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import avatar from '../assets/avatar.jpg';
+
+interface Field {
+  name: string;
+  href: string;
+  host: string;
+  text: string;
+  /** Block colour: ink (black/white) or the orange accent. */
+  tone: 'ink' | 'accent';
+  /** Set true to keep an interest off the page for now. */
+  hidden?: boolean;
+}
+
+const fields: Field[] = [
+  {
+    name: 'DevOps',
+    href: 'https://devops.tigonguyen.com',
+    host: 'devops.tigonguyen.com',
+    text: 'Notes and labs on cloud infrastructure, Kubernetes, CI/CD and security.',
+    tone: 'ink',
+  },
+  {
+    name: 'LLM Security',
+    href: 'https://llmsec.tigonguyen.com',
+    host: 'llmsec.tigonguyen.com',
+    text: 'The LLM Security Atlas: papers on how language models are attacked and defended, placed on one map.',
+    tone: 'accent',
+  },
+  {
+    name: 'Học Nhi Tri',
+    href: 'https://tigonguyen.substack.com',
+    host: 'tigonguyen.substack.com',
+    text: 'My Substack, in Vietnamese.',
+    tone: 'ink',
+    hidden: true,
+  },
+];
+
+const shown = fields.filter((f) => !f.hidden);
+const tones = {
+  ink: 'bg-fg text-bg',
+  accent: 'bg-accent text-on-accent',
+};
+---
+
+<Base>
+  <section class="grid gap-10 py-12 md:grid-cols-12 md:gap-8 md:py-20">
+    <h1 class="text-[clamp(4.25rem,16vw,11.5rem)] leading-[0.82] font-extrabold tracking-[-0.045em] md:col-span-9">
+      Thanh<br />Nguyen
+    </h1>
+    <div class="flex flex-row items-end gap-5 md:col-span-3 md:flex-col md:items-start md:justify-end">
+      <Image
+        src={avatar}
+        alt="Thanh Nguyen"
+        width={256}
+        height={256}
+        loading="eager"
+        class="size-24 object-cover grayscale contrast-125 transition duration-300 hover:grayscale-0 md:size-32"
+      />
+      <p class="text-lg leading-snug font-medium">
+        Curious about more than one thing. Each interest has its own site.
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="interests" class="pb-16 md:pb-24">
+    <div class="label flex justify-between border-t-2 border-fg py-3">
+      <h2 id="interests">Interests</h2>
+      <span>({String(shown.length).padStart(2, '0')})</span>
+    </div>
+
+    <ul class="mt-4 grid gap-4 md:grid-cols-2">
+      {shown.map((f, i) => (
+        <li>
+          <a
+            href={f.href}
+            class:list={[
+              'group flex min-h-80 flex-col justify-between p-6 transition-transform duration-200 hover:-translate-y-1 sm:min-h-96 sm:p-8',
+              tones[f.tone],
+            ]}
+          >
+            <div class="flex items-start justify-between">
+              <span class="label">{String(i + 1).padStart(2, '0')}</span>
+              <span
+                class="text-4xl leading-none transition-transform duration-200 group-hover:translate-x-1 group-hover:-translate-y-1"
+                aria-hidden="true"
+              >
+                ↗
+              </span>
+            </div>
+            <div>
+              <h3 class="text-[clamp(2.75rem,6vw,4.5rem)] leading-[0.9] font-extrabold tracking-[-0.035em]">{f.name}</h3>
+              <p class="mt-4 max-w-sm text-base leading-snug opacity-80">{f.text}</p>
+              <p class="label mt-6 underline underline-offset-4">{f.host}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

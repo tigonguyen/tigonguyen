@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Thanh Nguyen',
+  description = 'Thanh Nguyen writes about DevOps and LLM security.',
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap"
+    />
+    <script is:inline>
+      (function () {
+        let theme = null;
+        try { theme = localStorage.getItem('theme'); } catch (e) {}
+        const dark = theme ? theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', dark);
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen">
+    <div class="mx-auto flex min-h-screen max-w-6xl flex-col px-5 sm:px-10">
+      <header class="flex items-center justify-between border-b-2 border-fg py-4">
+        <a href="/" class="label">tigonguyen.com</a>
+        <button id="theme-toggle" type="button" class="label underline-offset-4 hover:underline" aria-label="Toggle dark mode">
+          <span class="dark:hidden">Dark</span><span class="hidden dark:inline">Light</span>
+        </button>
+      </header>
+
+      <main class="flex-1">
+        <slot />
+      </main>
+
+      <footer class="label flex flex-wrap items-center justify-between gap-3 border-t-2 border-fg py-5">
+        <span>© {new Date().getFullYear()} Thanh Nguyen</span>
+        <span class="flex gap-6">
+          <a href="https://github.com/tigonguyen" class="underline-offset-4 hover:underline">GitHub</a>
+          <a href="https://www.linkedin.com/in/thanh-nguyen-656853156/" class="underline-offset-4 hover:underline">LinkedIn</a>
+        </span>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById('theme-toggle')?.addEventListener('click', () => {
+        const dark = document.documentElement.classList.toggle('dark');
+        try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch {}
+      });
+    </script>
+  </body>
+</html>
