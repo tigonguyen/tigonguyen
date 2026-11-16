@@ -9,10 +9,6 @@ Senior DevOps engineer. I keep notes on more than one thing, and each interest g
 
 Everything starts at **[tigonguyen.com](https://tigonguyen.com)**.
 
-**Certifications:** AWS Solutions Architect – Professional · CKA · CKAD · AWS Solutions Architect – Associate · Azure Administrator (AZ-104) · LFCA
-
-**Off the keyboard:** science, football, music and travel.
-
 **Find me on:** [LinkedIn](https://www.linkedin.com/in/thanh-nguyen-656853156/) · [LeetCode](https://leetcode.com/u/tigonguyen/)
 
 <img src="https://github-readme-stats.vercel.app/api?username=tigonguyen&show_icons=true&theme=default" alt="GitHub stats for tigonguyen">
