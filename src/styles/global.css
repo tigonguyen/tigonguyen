@@ -2,49 +2,69 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Swiss-style palette: ink, paper and one signal colour. Swapped as a whole in dark mode. */
+/* Field notebook: graph paper, navy ink, red-pen accent, yellow marker. */
 :root {
-  --bg: #ffffff;
-  --fg: #0d0d0d;
-  --muted: #6b6b6b;
-  --accent: #ff4a1c;
-  --on-accent: #0d0d0d;
+  --paper: #fbfaf3;
+  --grid: rgba(64, 120, 200, 0.13);
+  --ink: #1f2a44;
+  --soft: #475275;
+  --card: #ffffff;
+  --mark: #ffe36e;
+  --margin: rgba(194, 65, 12, 0.45);
+  --red: #c2410c;
+  --blue: #2f5fb3;
+  --green: #2f7d4f;
 }
+/* Night notebook: navy paper, faint grid, lighter pens. */
 .dark {
-  --bg: #1b1b1b;
-  --fg: #f1f0ec;
-  --muted: #a3a3a3;
-  --accent: #ff6a3d;
-  --on-accent: #0d0d0d;
+  --paper: #1c2230;
+  --grid: rgba(150, 180, 230, 0.09);
+  --ink: #e9edf5;
+  --soft: #b4bdd1;
+  --card: #252c3c;
+  --mark: rgba(255, 227, 110, 0.35);
+  --margin: rgba(240, 138, 93, 0.5);
+  --red: #f08a5d;
+  --blue: #86aaf0;
+  --green: #71c493;
 }
 
 @theme inline {
-  --color-bg: var(--bg);
-  --color-fg: var(--fg);
-  --color-muted: var(--muted);
-  --color-accent: var(--accent);
-  --color-on-accent: var(--on-accent);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-soft: var(--soft);
+  --color-card: var(--card);
+  --color-red: var(--red);
+  --color-blue: var(--blue);
+  --color-green: var(--green);
 }
 
 @theme {
-  --font-sans: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-hand: "Caveat", "Comic Sans MS", cursive;
 }
 
 @layer base {
   html {
-    @apply bg-bg text-fg antialiased;
+    @apply bg-paper text-ink antialiased;
     font-family: var(--font-sans);
-    font-feature-settings: "tnum";
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
   ::selection {
-    @apply bg-accent text-on-accent;
+    background: var(--mark);
   }
 }
 
-/* Small uppercase label used in the header, section rows and footer. */
-@utility label {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+/* Marker highlight behind a phrase. */
+@utility mark {
+  background: linear-gradient(transparent 55%, var(--mark) 55%, var(--mark) 92%, transparent 92%);
+}
+
+/* Ruled index-card lines. */
+@utility ruled {
+  background-image: linear-gradient(transparent 31px, var(--grid) 32px);
+  background-size: 100% 32px;
 }

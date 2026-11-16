@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = 'Thanh Nguyen',
-  description = 'Thanh Nguyen writes about DevOps and LLM security.',
+  description = 'Thanh Nguyen keeps notes on DevOps and LLM security.',
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
@@ -29,7 +29,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Space+Grotesk:wght@400;500;700&display=swap"
     />
     <script is:inline>
       (function () {
@@ -40,24 +40,32 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       })();
     </script>
   </head>
-  <body class="min-h-screen">
-    <div class="mx-auto flex min-h-screen max-w-6xl flex-col px-5 sm:px-10">
-      <header class="flex items-center justify-between border-b-2 border-fg py-4">
-        <a href="/" class="label">tigonguyen.com</a>
-        <button id="theme-toggle" type="button" class="label underline-offset-4 hover:underline" aria-label="Toggle dark mode">
-          <span class="dark:hidden">Dark</span><span class="hidden dark:inline">Light</span>
-        </button>
+  <body class="min-h-screen border-l-[3px] border-[var(--margin)]">
+    <div class="mx-auto flex min-h-screen max-w-5xl flex-col px-5 sm:px-8">
+      <header class="flex flex-wrap items-baseline justify-between gap-4 pt-8 pb-4">
+        <a href="/" class="text-lg font-bold">tigonguyen.com</a>
+        <div class="flex items-baseline gap-5">
+          <span class="font-hand text-2xl text-red">p. 1, the index</span>
+          <button
+            id="theme-toggle"
+            type="button"
+            class="font-hand text-2xl text-soft underline-offset-4 hover:text-ink hover:underline"
+            aria-label="Toggle dark mode"
+          >
+            <span class="dark:hidden">night</span><span class="hidden dark:inline">day</span>
+          </button>
+        </div>
       </header>
 
-      <main class="flex-1">
+      <main class="flex-1 py-10">
         <slot />
       </main>
 
-      <footer class="label flex flex-wrap items-center justify-between gap-3 border-t-2 border-fg py-5">
+      <footer class="flex flex-wrap items-center justify-between gap-3 border-t-[1.5px] border-ink py-5 text-[15px]">
         <span>© {new Date().getFullYear()} Thanh Nguyen</span>
-        <span class="flex gap-6">
-          <a href="https://github.com/tigonguyen" class="underline-offset-4 hover:underline">GitHub</a>
-          <a href="https://www.linkedin.com/in/thanh-nguyen-656853156/" class="underline-offset-4 hover:underline">LinkedIn</a>
+        <span class="flex gap-5">
+          <a href="https://github.com/tigonguyen" class="hover:text-red">GitHub</a>
+          <a href="https://www.linkedin.com/in/thanh-nguyen-656853156/" class="hover:text-red">LinkedIn</a>
         </span>
       </footer>
     </div>
