@@ -12,5 +12,3 @@ Everything starts at **[tigonguyen.com](https://tigonguyen.com)**.
 **Find me on:** [LinkedIn](https://www.linkedin.com/in/thanh-nguyen-656853156/) · [LeetCode](https://leetcode.com/u/tigonguyen/)
 
 <img src="https://github-readme-stats.vercel.app/api?username=tigonguyen&show_icons=true&theme=default" alt="GitHub stats for tigonguyen">
-
-<sub>This repo also holds the source of tigonguyen.com (Astro, deployed on Cloudflare Workers).</sub>
